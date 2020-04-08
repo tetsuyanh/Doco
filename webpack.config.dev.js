@@ -2,7 +2,9 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
-  entry: "./src/js/index.js",
+  entry: {
+    app: "./src/js/index.js",
+  },
   module: {
     rules: [
       {
@@ -20,7 +22,16 @@ module.exports = {
     ],
   },
   output: {
-    path: path.resolve(__dirname, "public/js/"),
-    filename: "bundle.js",
+    path: path.resolve(__dirname, "public"),
+    publicPath: "/js/",
+    filename: "[name].js",
+  },
+  devtool: "inline-source-map",
+  devServer: {
+    open: true,
+    openPage: "index.html",
+    contentBase: path.join(__dirname, "public"),
+    watchContentBase: true,
+    port: 4000,
   },
 };
