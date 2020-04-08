@@ -1,14 +1,21 @@
 const path = require("path");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: "./src/js/index.js",
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        loader: "babel-loader",
         exclude: /node_modules/,
+        use: [
+          {
+            loader: "babel-loader",
+            options: {
+              presets: [["@babel/preset-env", { modules: false }]],
+            },
+          },
+        ],
       },
     ],
   },

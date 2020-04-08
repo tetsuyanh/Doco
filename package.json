@@ -4,8 +4,8 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "",
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack -w --config webpack.config.dev.js"
   },
   "dependencies": {},
   "devDependencies": {
@@ -17,5 +17,6 @@
     "react-dom": "^16.13.1",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
-  }
+  },
+  "devtool": "source-map"
 }
