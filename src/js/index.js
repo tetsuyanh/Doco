@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>This is React</h2>
-        <p>I am React</p>
+        <p>I am React, nice to see you.</p>
         <p>You are human.</p>
         <p>insert message: {message}</p>
       </div>

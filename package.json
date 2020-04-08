@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "build:dev": "webpack --config webpack.config.dev.js",
-    "start": "webpack-dev-server --hot --config webpack.config.dev.js"
+    "start": "webpack-dev-server --inline --hot --config webpack.config.dev.js"
   },
   "dependencies": {},
   "devDependencies": {
