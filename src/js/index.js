@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import MainScreen from "./components/MainScreen";
+
 class App extends React.Component {
   render() {
     const message = "this is es6 style message!!!!";
@@ -11,6 +13,7 @@ class App extends React.Component {
         <p>I am React, nice to see you.</p>
         <p>You are human.</p>
         <p>insert message: {message}</p>
+        <MainScreen />
       </div>
     );
   }
