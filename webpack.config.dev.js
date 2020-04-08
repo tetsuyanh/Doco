@@ -1,9 +1,9 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
-  mode: "development",
+  mode: 'development',
   entry: {
-    app: "./src/js/index.js",
+    app: './src/js/index.js',
   },
   module: {
     rules: [
@@ -12,9 +12,25 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "babel-loader",
+            loader: 'babel-loader',
             options: {
-              presets: [["@babel/preset-env", { modules: false }]],
+              presets: [['@babel/preset-env', { modules: false }]],
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
             },
           },
         ],
@@ -22,15 +38,15 @@ module.exports = {
     ],
   },
   output: {
-    path: path.resolve(__dirname, "public/js"),
-    publicPath: "/js/",
-    filename: "[name].js",
+    path: path.resolve(__dirname, 'public/js'),
+    publicPath: '/js/',
+    filename: '[name].js',
   },
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   devServer: {
     open: true,
-    openPage: "index.html",
-    contentBase: path.join(__dirname, "public"),
+    openPage: 'index.html',
+    contentBase: path.join(__dirname, 'public'),
     watchContentBase: true,
     port: 4000,
   },
