@@ -1,22 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'ress';
 
-import MainScreen from "./components/MainScreen";
+import MainScreen from './components/MainScreen';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSearch, faFolder } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faSearch, faFolder);
 
 class App extends React.Component {
   render() {
-    const message = "this is es6 style message!!!!";
-
     return (
       <div>
-        <h2>This is React</h2>
-        <p>I am React, nice to see you.</p>
-        <p>You are human.</p>
-        <p>insert message: {message}</p>
         <MainScreen />
       </div>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));

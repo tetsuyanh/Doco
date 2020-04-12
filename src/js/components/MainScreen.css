@@ -1,3 +1,122 @@
-.list {
-  border: 1px solid skyblue;
+.section {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px;
+}
+.head {
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #222;
+}
+.hidden {
+  display: none;
+}
+
+.shopWrapper {
+  display: flex;
+  align-items: center;
+  margin: 8px;
+  padding: 8px;
+  height: 80px;
+}
+.shopLogo {
+  width: 120px;
+  height: 70px;
+  margin: auto 0;
+  padding: 8px;
+  vertical-align: middle;
+}
+.shopImage {
+  width: auto;
+  height: auto;
+  max-width: 104px;
+  max-height: 72px;
+}
+.shopBranch {
+  width: 90%;
+  padding: 8px;
+  text-align: center;
+}
+.branchName {
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+  margin: 4px 0 4px;
+}
+.branchBusinessHour {
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+.branchStatus {
+  display: inline-block;
+  border: 1px solid green;
+  border-radius: 3px;
+  padding: 0 8px;
+  font-weight: bold;
+  color: green;
+}
+.appearance {
+  width: 100%;
+  box-shadow: 0 0 4px gray;
+}
+
+.news {
+  width: 100%;
+  margin-top: 16px;
+  padding: 8px;
+  text-align: center;
+}
+.newsList {
+  width: 90%;
+  list-style: none;
+  text-align: left;
+  margin: 0 auto 0;
+  padding: 8px;
+}
+.newsDate {
+  width: 15%;
+  font-size: 0.8rem;
+  color: #333;
+  text-align: right;
+  padding-right: 8px;
+  vertical-align: middle;
+}
+.newsLink {
+  font-size: 1rem;
+  margin-left: 8px;
+  padding-left: 4px 0 4px 8px;
+}
+.newsDate::before {
+  content: ' ';
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  color: #333;
+  background-color: lightblue;
+  box-shadow: 2px 2px 4px lightgray;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 8px;
+  font-size: 1.2rem;
+}
+.searchIcon {
+  margin: 0 8px 0;
+}
+.searchLabel {
+  padding: 16px;
+  letter-spacing: 2px;
+}
+
+footer {
+  color: #333;
+  background-color: lightgray;
+  padding: 8px 0 8px;
+  text-align: center;
+  font-size: 0.6rem;
 }
