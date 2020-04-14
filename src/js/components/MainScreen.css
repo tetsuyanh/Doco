@@ -82,8 +82,9 @@
   vertical-align: middle;
 }
 .newsLink {
+  display: inline-block;
   font-size: 1rem;
-  margin-left: 8px;
+  margin-bottom: 8px;
   padding-left: 4px 0 4px 8px;
 }
 .newsDate::before {
@@ -100,6 +101,7 @@
   box-shadow: 2px 2px 4px lightgray;
   text-align: center;
   vertical-align: middle;
+  text-decoration: none;
   border-radius: 8px;
   margin: 8px;
   padding: 8px;
@@ -109,14 +111,6 @@
   margin: 0 8px 0;
 }
 .searchLabel {
-  padding: 16px;
+  padding: 0 16px;
   letter-spacing: 2px;
-}
-
-footer {
-  color: #333;
-  background-color: lightgray;
-  padding: 8px 0 8px;
-  text-align: center;
-  font-size: 0.6rem;
 }

@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './MainScreen.css';
 
-const MainScreen = () => {
-  const [count, setCount] = useState(0);
+import items from '../dummy';
 
+const MainScreen = () => {
   const shop = {
     name: 'ダイソー',
     branch: '防府佐波店',
@@ -37,46 +38,46 @@ const MainScreen = () => {
       <section className={styles.section}>
         <h2 className={styles.head}>お知らせ</h2>
         <table className={styles.newsList}>
-          <tr className={styles.newsHead}>
-            <td className={styles.newsDate}>4/12</td>
-            <td className={styles.newsLink}>
-              <a href='#'>営業時間短縮について</a>
-            </td>
-          </tr>
-          <tr className={styles.newsHead}>
-            <td className={styles.newsDate}>4/3</td>
-            <td className={styles.newsLink}>
-              <a href='#'>キャッシュレス支払い方法追加</a>
-            </td>
-          </tr>
-          <tr className={styles.newsHead}>
-            <td className={styles.newsDate}>3/21</td>
-            <td className={styles.newsLink}>
-              <a href='#'>新商品入荷のご紹介</a>
-            </td>
-          </tr>
-          <tr className={styles.newsHead}>
-            <td className={styles.newsDate}>12/23</td>
-            <td className={styles.newsLink}>
-              <a href='#'>年末年始の営業時間について</a>
-            </td>
-          </tr>
+          <tbody>
+            <tr className={styles.newsHead} key='1'>
+              <td className={styles.newsDate}>4/12</td>
+              <td className={styles.newsLink}>
+                <Link to='/news'>営業時間短縮について</Link>
+              </td>
+            </tr>
+            <tr className={styles.newsHead} key='2'>
+              <td className={styles.newsDate}>4/3</td>
+              <td className={styles.newsLink}>
+                <Link to='/news'>キャッシュレス支払い方法追加</Link>
+              </td>
+            </tr>
+            <tr className={styles.newsHead} key='3'>
+              <td className={styles.newsDate}>3/21</td>
+              <td className={styles.newsLink}>
+                <Link to='/news'>新商品入荷のご紹介</Link>
+              </td>
+            </tr>
+            <tr className={styles.newsHead} key='4'>
+              <td className={styles.newsDate}>12/23</td>
+              <td className={styles.newsLink}>
+                <Link to='/news'>年末年始の営業時間について</Link>
+              </td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
       <section className={styles.section}>
         <h2 className={styles.head}>商品をさがす</h2>
-        <a className={`${styles.search} ${styles.keyword}`}>
+        <Link to='/search_keyword' className={styles.search}>
           <FontAwesomeIcon className={styles.searchIcon} icon='search' />
           <p className={styles.searchLabel}>キーワード</p>
-        </a>
-        <a className={`${styles.search} ${styles.category}`}>
+        </Link>
+        <Link to='/search_category' className={styles.search}>
           <FontAwesomeIcon className={styles.searchIcon} icon='folder' />
           <p className={styles.searchLabel}>カテゴリ</p>
-        </a>
+        </Link>
       </section>
-
-      <footer>DocoDoco powered by Thwoo, Inc.</footer>
     </div>
   );
 };

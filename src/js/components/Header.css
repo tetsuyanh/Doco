@@ -1,0 +1,9 @@
+.header {
+  background-color: #e4d500;
+  color: #242424;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 8px 0;
+  box-shadow: 0 0 4px gray;
+}

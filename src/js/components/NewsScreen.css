@@ -1,0 +1,43 @@
+.headWrapper {
+  position: relative;
+  height: 48px;
+  margin: 16px auto;
+  width: 90%;
+}
+
+.head {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.2rem;
+}
+
+.date {
+  position: absolute;
+  top: 0;
+  font-size: 0.7rem;
+}
+
+.content {
+  width: 90%;
+  margin: 16px auto 16px;
+}
+
+.image {
+  width: 100%;
+}
+
+.back {
+  text-align: center;
+  margin: 16px auto;
+}
+
+.link {
+  display: inline-block;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  background-color: #eee;
+  color: #333;
+}
