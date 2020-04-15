@@ -6,6 +6,7 @@ import 'ress';
 import Header from './components/Header';
 import MainScreen from './components/MainScreen';
 import SearchKeywordScreen from './components/SearchKeywordScreen';
+import SearchCategoryScreen from './components/SearchCategoryScreen';
 import NewsScreen from './components/NewsScreen';
 import Footer from './components/Footer';
 
@@ -27,7 +28,10 @@ class App extends React.Component {
             <NewsScreen />
           </Route>
           <Route path='/search_keyword'>
-            <SearchKeywordScreen />>
+            <SearchKeywordScreen />
+          </Route>
+          <Route path='/search_category'>
+            <SearchCategoryScreen />
           </Route>
           <Route>
             <div>Not Found</div>

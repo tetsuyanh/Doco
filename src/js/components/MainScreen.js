@@ -18,7 +18,7 @@ const MainScreen = () => {
   };
 
   return (
-    <div>
+    <div className={styles.mainScreen}>
       <section className={styles.section}>
         <h2 className={`${styles.head} ${styles.hidden}`}>店舗情報</h2>
         <div className={styles.shopWrapper}>

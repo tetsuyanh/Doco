@@ -26,24 +26,28 @@ const NewsScreen = () => {
   };
 
   return (
-    <div>
+    <div className={styles.newsScreen}>
       <div className={styles.headWrapper}>
         <h2 className={styles.head}>{news.head}</h2>
         <p className={styles.date}>{news.date}</p>
       </div>
-      {news.contents.map((c) => {
+      {news.contents.map((c, index) => {
         if (c.type === 'text') {
-          return <div className={styles.content}>{c.content}</div>;
+          return (
+            <div className={styles.content} key={index}>
+              {c.content}
+            </div>
+          );
         } else if (c.type === 'image') {
           return (
-            <div className={styles.content}>
+            <div className={styles.content} key={index}>
               <img className={styles.image} src={c.content} />
             </div>
           );
         }
       })}
-      <div className={styles.back}>
-        <Link className={styles.link} to='/'>
+      <div className={styles.backWrapper}>
+        <Link className={styles.back} to='/'>
           もどる
         </Link>
       </div>

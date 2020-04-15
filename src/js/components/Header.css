@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Passero+One&display=swap');
 .header {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 48px;
+  top: 0;
   font-family: 'Passero One', cursive;
   font-size: 1.5rem;
   background-color: #e4d500;
   color: #242424;
   text-align: center;
-  font-weight: bold;
   letter-spacing: 2px;
   padding: 8px 0;
   box-shadow: 0 0 4px gray;

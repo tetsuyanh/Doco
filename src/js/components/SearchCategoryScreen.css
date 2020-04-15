@@ -1,0 +1,82 @@
+.itemList {
+  margin-top: 64px;
+}
+
+.item {
+  position: relative;
+  height: 48px;
+  margin: 8px;
+  padding: 8px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+.name {
+  position: absolute;
+  left: 100px;
+  font-size: 1.4rem;
+}
+.category {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 8px;
+  margin-left: 8px;
+  font-size: 0.7rem;
+}
+.price {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+.price::after {
+  content: '円';
+  margin-left: 4px;
+}
+
+.searchKeywordScreen {
+  margin-top: 64px;
+}
+
+.operation {
+  position: fixed;
+  z-index: 500;
+  align-items: stretch;
+  width: 100%;
+  bottom: 32px;
+  display: flex;
+  background-color: white;
+}
+
+.form {
+  margin: 8px auto;
+  padding: 8px;
+  flex-grow: 3;
+}
+
+.select {
+  width: 100%;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+.backWrapper {
+  text-align: center;
+  margin: 16px auto;
+  flex-grow: 1;
+}
+
+.back {
+  display: inline-block;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  background-color: #eee;
+  color: #333;
+}

@@ -1,16 +1,19 @@
+.newsScreen {
+  margin-top: 64px;
+}
+
 .headWrapper {
   position: relative;
   height: 48px;
   margin: 16px auto;
+  padding: 8px;
   width: 90%;
 }
-
 .head {
   position: absolute;
   bottom: 0;
   font-size: 1.2rem;
 }
-
 .date {
   position: absolute;
   top: 0;
@@ -26,12 +29,12 @@
   width: 100%;
 }
 
-.back {
+.backWrapper {
   text-align: center;
   margin: 16px auto;
 }
 
-.link {
+.back {
   display: inline-block;
   padding: 8px 16px;
   text-align: center;
