@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Passero+One&display=swap');
 .header {
+  font-family: 'Passero One', cursive;
+  font-size: 1.5rem;
   background-color: #e4d500;
   color: #242424;
   text-align: center;
