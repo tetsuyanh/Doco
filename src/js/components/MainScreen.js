@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import styles from './MainScreen.css';
 
-import items from '../dummy';
-
 const MainScreen = () => {
   const shop = {
     name: 'ダイソー',
@@ -77,7 +75,13 @@ const MainScreen = () => {
           <FontAwesomeIcon className={styles.searchIcon} icon='folder' />
           <p className={styles.searchLabel}>カテゴリ</p>
         </Link>
+        <Link to='/search_favorite' className={styles.search}>
+          <FontAwesomeIcon className={styles.searchIcon} icon='star' />
+          <p className={styles.searchLabel}>お気に入り</p>
+        </Link>
       </section>
+
+      <section className={styles.section}></section>
     </div>
   );
 };

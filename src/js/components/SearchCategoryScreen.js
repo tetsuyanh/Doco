@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 import styles from './SearchCategoryScreen.css';
 
 import items from '../dummy';
 
-const SearchCategoryScreen = (props) => {
+const SearchCategoryScreen = withRouter((props) => {
   const [category, setCategory] = useState('');
 
   const categories = [
@@ -75,13 +75,16 @@ const SearchCategoryScreen = (props) => {
           </select>
         </form>
         <div className={styles.backWrapper}>
-          <Link className={styles.back} to='/'>
+          <button
+            className={styles.back}
+            onClick={() => props.history.goBack()}
+          >
             もどる
-          </Link>
+          </button>
         </div>
       </div>
     </div>
   );
-};
+});
 
 export default SearchCategoryScreen;

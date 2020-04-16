@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import styles from './NewsScreen.css';
 
-const NewsScreen = () => {
+const NewsScreen = withRouter((props) => {
   const news = {
     head: '営業時間短縮について',
     date: '2020-04-12',
@@ -47,12 +47,12 @@ const NewsScreen = () => {
         }
       })}
       <div className={styles.backWrapper}>
-        <Link className={styles.back} to='/'>
+        <button className={styles.back} onClick={() => props.history.goBack()}>
           もどる
-        </Link>
+        </button>
       </div>
     </div>
   );
-};
+});
 
 export default NewsScreen;

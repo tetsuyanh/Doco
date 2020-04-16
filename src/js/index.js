@@ -11,9 +11,9 @@ import NewsScreen from './components/NewsScreen';
 import Footer from './components/Footer';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSearch, faFolder } from '@fortawesome/free-solid-svg-icons';
-
-library.add(faSearch, faFolder);
+import { faSearch, faFolder, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+library.add(faSearch, faFolder, faStar, farStar);
 
 class App extends React.Component {
   render() {
