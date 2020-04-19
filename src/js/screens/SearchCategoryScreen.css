@@ -1,5 +1,6 @@
 .itemList {
   margin-top: 64px;
+  margin-bottom: 100px;
 }
 
 .item {
@@ -46,7 +47,7 @@
   z-index: 500;
   align-items: stretch;
   width: 100%;
-  bottom: 32px;
+  bottom: 24px;
   display: flex;
   background-color: white;
 }
@@ -57,7 +58,7 @@
   flex-grow: 3;
 }
 
-.input {
+.select {
   width: 100%;
   border: 1px solid #333;
   border-radius: 8px;

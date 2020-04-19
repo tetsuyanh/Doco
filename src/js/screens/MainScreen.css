@@ -77,7 +77,7 @@
   margin: 0 auto 0;
   padding: 8px;
 }
-.newsDate {
+.tableDataDate {
   width: 15%;
   font-size: 0.8rem;
   color: #333;
@@ -85,14 +85,24 @@
   padding-right: 8px;
   vertical-align: middle;
 }
+.tableDateHead {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1rem;
+  padding-left: 4px 0 4px 8px;
+  vertical-align: middle;
+}
+.tableDateHead::before {
+  content: ' ';
+}
 .newsLink {
   display: inline-block;
-  font-size: 1rem;
-  margin-bottom: 8px;
-  padding-left: 4px 0 4px 8px;
+  text-decoration: none;
 }
-.newsDate::before {
-  content: ' ';
+.newsLink::before {
+  content: '＞ ';
+  font-size: 0.6rem;
+  vertical-align: middle;
 }
 
 .search {
@@ -107,7 +117,7 @@
   vertical-align: middle;
   text-decoration: none;
   border-radius: 8px;
-  margin: 8px;
+  margin: 8px 8px 12px;
   padding: 8px;
   font-size: 1.2rem;
 }

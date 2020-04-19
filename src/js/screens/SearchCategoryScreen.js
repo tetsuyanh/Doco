@@ -3,35 +3,8 @@ import { withRouter } from 'react-router-dom';
 
 import styles from './SearchCategoryScreen.css';
 
-import items from '../dummy';
-
 const SearchCategoryScreen = withRouter((props) => {
   const [category, setCategory] = useState('');
-
-  const categories = [
-    'Home',
-    'Kids',
-    'Baby',
-    'Toys',
-    'Clothing',
-    'Beauty',
-    'Shoes',
-    'Jewelery',
-    'Health',
-    'Outdoors',
-    'Garden',
-    'Industrial',
-    'Grocery',
-    'Computers',
-    'Books',
-    'Music',
-    'Movies',
-    'Sports',
-    'Games',
-    'Tools',
-    'Automotive',
-    'Electronics',
-  ];
 
   const changeCategory = (event) => {
     setCategory(event.target.value);
@@ -40,20 +13,19 @@ const SearchCategoryScreen = withRouter((props) => {
   return (
     <div className={styles.searchCategoryScreen}>
       <ul className={styles.itemList}>
-        {category !== '' &&
-          items
-            .filter((item) => {
-              return item.category === category;
-            })
-            .map((item, index) => {
-              return (
-                <li className={styles.item} key={index}>
-                  <span className={styles.name}>{item.name}</span>
-                  <span className={styles.category}>{item.category}</span>
-                  <span className={styles.price}>{item.price}</span>
-                </li>
-              );
-            })}
+        {props.items
+          .filter((item) => {
+            return (category === '') | (item.category === category);
+          })
+          .map((item, index) => {
+            return (
+              <li className={styles.item} key={index}>
+                <span className={styles.name}>{item.name}</span>
+                <span className={styles.category}>{item.category}</span>
+                <span className={styles.price}>{item.price}</span>
+              </li>
+            );
+          })}
       </ul>
       <div className={styles.operation}>
         <form className={styles.form}>
@@ -65,7 +37,7 @@ const SearchCategoryScreen = withRouter((props) => {
             <option value='' key='init'>
               カテゴリーを選択
             </option>
-            {categories.map((c, index) => {
+            {props.categories.map((c, index) => {
               return (
                 <option value={c} key={index}>
                   {c}

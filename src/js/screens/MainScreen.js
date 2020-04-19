@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -37,28 +37,36 @@ const MainScreen = () => {
         <h2 className={styles.head}>お知らせ</h2>
         <table className={styles.newsList}>
           <tbody>
-            <tr className={styles.newsHead} key='1'>
-              <td className={styles.newsDate}>4/12</td>
-              <td className={styles.newsLink}>
-                <Link to='/news'>営業時間短縮について</Link>
+            <tr className={styles.tableRow} key='1'>
+              <td className={styles.tableDataDate}>4/12</td>
+              <td className={styles.tableDateHead}>
+                <Link className={styles.newsLink} to='/news'>
+                  営業時間短縮について
+                </Link>
               </td>
             </tr>
-            <tr className={styles.newsHead} key='2'>
-              <td className={styles.newsDate}>4/3</td>
-              <td className={styles.newsLink}>
-                <Link to='/news'>キャッシュレス支払い方法追加</Link>
+            <tr className={styles.tableRow} key='2'>
+              <td className={styles.tableDataDate}>4/3</td>
+              <td className={styles.tableDateHead}>
+                <Link className={styles.newsLink} to='/news'>
+                  キャッシュレス支払い方法追加
+                </Link>
               </td>
             </tr>
-            <tr className={styles.newsHead} key='3'>
-              <td className={styles.newsDate}>3/21</td>
-              <td className={styles.newsLink}>
-                <Link to='/news'>新商品入荷のご紹介</Link>
+            <tr className={styles.tableRow} key='3'>
+              <td className={styles.tableDataDate}>3/21</td>
+              <td className={styles.tableDateHead}>
+                <Link className={styles.newsLink} to='/news'>
+                  新商品入荷のご紹介
+                </Link>
               </td>
             </tr>
-            <tr className={styles.newsHead} key='4'>
-              <td className={styles.newsDate}>12/23</td>
-              <td className={styles.newsLink}>
-                <Link to='/news'>年末年始の営業時間について</Link>
+            <tr className={styles.tableRow} key='4'>
+              <td className={styles.tableDataDate}>12/23</td>
+              <td className={styles.tableDateHead}>
+                <Link className={styles.newsLink} to='/news'>
+                  年末年始の営業時間について
+                </Link>
               </td>
             </tr>
           </tbody>

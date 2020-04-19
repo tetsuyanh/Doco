@@ -1,5 +1,12 @@
+.favoriteEmpty {
+  margin-top: 64px;
+  margin-bottom: 100px;
+  padding: 8px;
+}
+
 .itemList {
   margin-top: 64px;
+  margin-bottom: 100px;
 }
 
 .item {
@@ -46,7 +53,7 @@
   z-index: 500;
   align-items: stretch;
   width: 100%;
-  bottom: 32px;
+  bottom: 24px;
   display: flex;
   background-color: white;
 }

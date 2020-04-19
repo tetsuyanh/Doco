@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import styles from './SearchKeywordScreen.css';
+import styles from './SearchFavoriteScreen.css';
 
 import items from '../dummy';
 
-const SearchKeywordScreen = withRouter((props) => {
-  const [keyword, setKeyword] = useState('');
+const SearchFavoriteScreen = withRouter((props) => {
+  const [category, setFavorite] = useState('');
 
-  const changeKeyword = (event) => {
-    setKeyword(event.target.value);
+  const changeFavorite = (event) => {
+    setFavorite(event.target.value);
   };
 
   return (
-    <div className={styles.searchKeywordScreen}>
-      <ul className={styles.itemList}>
-        {keyword !== '' &&
-          items
+    <div className={styles.searchFavoriteScreen}>
+      {props.favoriteItemIds.length === 0 && (
+        <p className={styles.favoriteEmpty}>お気に入りはありません</p>
+      )}
+      {props.favoriteItemIds.length > 0 && (
+        <ul className={styles.itemList}>
+          {items
             .filter((item) => {
-              return item.name.match(new RegExp('^' + keyword));
+              return props.favoriteItemIds.includes(item.id);
             })
             .map((item, index) => {
               return (
@@ -29,17 +32,9 @@ const SearchKeywordScreen = withRouter((props) => {
                 </li>
               );
             })}
-      </ul>
+        </ul>
+      )}
       <div className={styles.operation}>
-        <form className={styles.form}>
-          <input
-            type='text'
-            className={styles.input}
-            value={keyword}
-            placeholder='キーワードを入力'
-            onChange={changeKeyword}
-          />
-        </form>
         <div className={styles.backWrapper}>
           <button
             className={styles.back}
@@ -53,4 +48,4 @@ const SearchKeywordScreen = withRouter((props) => {
   );
 });
 
-export default SearchKeywordScreen;
+export default SearchFavoriteScreen;
