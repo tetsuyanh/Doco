@@ -1,49 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
-
-import SearchKeywordItemList from '../containers/SearchKeywordItemList';
+import { connect } from 'react-redux';
 import styles from './SearchKeywordScreen.css';
+import { toggleItemFavorite } from '../actions';
 
-const SearchKeywordScreen = withRouter((props) => {
+import ItemList from './ItemList';
+import TextMenu from './TextMenu';
+
+const SearchKeywordScreen = withRouter(({ items, toggleFavorite, history }) => {
+  const [filteredItems, setFilteredItems] = useState([]);
   const [keyword, setKeyword] = useState('');
 
-  const changeKeyword = (event) => {
-    setKeyword(event.target.value);
+  useEffect(() => {
+    console.log('keyword:' + keyword);
+    if (keyword === '') {
+      setFilteredItems(items);
+    }
+    const regexp = new RegExp('^' + keyword);
+    setFilteredItems(items.filter((item) => item.name.match(regexp)));
+  }, [items, keyword]);
+
+  const updateKeyword = (keyword) => {
+    setKeyword(keyword);
   };
 
   return (
     <div className={styles.searchKeywordScreen}>
-      <SearchKeywordItemList />
-      <div className={styles.operation}>
-        <form className={styles.form}>
-          <input
-            type='text'
-            className={styles.input}
-            value={keyword}
-            placeholder='キーワードを入力'
-            onChange={changeKeyword}
-          />
-        </form>
-        <div className={styles.backWrapper}>
-          <button
-            className={styles.back}
-            onClick={() => props.history.goBack()}
-          >
-            もどる
-          </button>
-        </div>
-      </div>
+      <ItemList items={filteredItems} clickFavorite={toggleFavorite} />
+      <TextMenu
+        placeholder='キーワードを入力'
+        updateText={updateKeyword}
+        clickBack={() => history.goBack()}
+      />
     </div>
   );
 });
 
-// const mapStateToProps = (state) => ({});
+const mapStateToProps = (state, ownProps) => {
+  return { items: state.items };
+};
 
-// const mapDispatchToProps = (dispatch) => ({});
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    toggleFavorite: (id) => dispatch(toggleItemFavorite(id)),
+  };
+};
 
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(SearchKeywordScreen);
-
-export default SearchKeywordScreen;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchKeywordScreen);

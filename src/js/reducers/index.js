@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import items from './items';
-import favorites from './favorites';
 
-export default combineReducers({
+const rootReducer = combineReducers({
   items,
-  favorites,
 });
+
+export default rootReducer;

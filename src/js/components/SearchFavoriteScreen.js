@@ -1,51 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
-
+import { connect } from 'react-redux';
 import styles from './SearchFavoriteScreen.css';
+import { toggleItemFavorite } from '../actions';
 
-import items from '../dummy';
+import ItemList from './ItemList';
+import FavoriteMenu from './FavoriteMenu';
 
-const SearchFavoriteScreen = withRouter((props) => {
-  const [category, setFavorite] = useState('');
+const SearchFavoriteScreen = withRouter(
+  ({ items, toggleFavorite, history }) => {
+    const [filteredItems, setFilteredItems] = useState([]);
 
-  const changeFavorite = (event) => {
-    setFavorite(event.target.value);
-  };
+    useEffect(() => {
+      setFilteredItems(items.filter((item) => item.isFavorite));
+    }, [items]);
 
-  return (
-    <div className={styles.searchFavoriteScreen}>
-      {props.favoriteItemIds.length === 0 && (
-        <p className={styles.favoriteEmpty}>お気に入りはありません</p>
-      )}
-      {props.favoriteItemIds.length > 0 && (
-        <ul className={styles.itemList}>
-          {items
-            .filter((item) => {
-              return props.favoriteItemIds.includes(item.id);
-            })
-            .map((item, index) => {
-              return (
-                <li className={styles.item} key={index}>
-                  <span className={styles.name}>{item.name}</span>
-                  <span className={styles.category}>{item.category}</span>
-                  <span className={styles.price}>{item.price}</span>
-                </li>
-              );
-            })}
-        </ul>
-      )}
-      <div className={styles.operation}>
-        <div className={styles.backWrapper}>
-          <button
-            className={styles.back}
-            onClick={() => props.history.goBack()}
-          >
-            もどる
-          </button>
-        </div>
+    return (
+      <div className={styles.searchFavoriteScreen}>
+        {filteredItems.length === 0 ? (
+          <p className={styles.favoriteEmpty}>お気に入りはありません</p>
+        ) : (
+          <ItemList items={filteredItems} clickFavorite={toggleFavorite} />
+        )}
+        <FavoriteMenu clickBack={() => history.goBack()} />
       </div>
-    </div>
-  );
-});
+    );
+  }
+);
 
-export default SearchFavoriteScreen;
+const mapStateToProps = (state, ownProps) => {
+  return { items: state.items };
+};
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    toggleFavorite: (id) => dispatch(toggleItemFavorite(id)),
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SearchFavoriteScreen);

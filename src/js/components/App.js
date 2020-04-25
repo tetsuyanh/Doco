@@ -40,34 +40,6 @@ const categories = [
 ];
 
 const App = () => {
-  // TODO: fetch
-  // const items = []
-
-  // // const [favoriteItemIds, setFavoriteItemIds] = useState([]);
-  // const [favoriteItemIds, dispatchFavoriteItemAction] = useReducer(
-  //   (ids, { type, targetId }) => {
-  //     switch (type) {
-  //       case 'add':
-  //         console.log(`add: ${targetId}`);
-  //         return [...ids, targetId];
-  //       case 'remove':
-  //         console.log(`remove: ${targetId}`);
-  //         return ids.filter((id) => id !== targetId);
-  //       default:
-  //         ids;
-  //     }
-  //   },
-  //   []
-  // );
-
-  // const addFavoriteItemId = (id) => {
-  //   dispatchFavoriteItemAction({ type: 'add', targetId: id });
-  // };
-
-  // const removeFavoriteItemId = (id) => {
-  //   dispatchFavoriteItemAction({ type: 'remove', targetId: id });
-  // };
-
   return (
     <BrowserRouter>
       <Header />
@@ -79,29 +51,14 @@ const App = () => {
           <NewsScreen />
         </Route>
         <Route path='/search_keyword'>
-          <SearchKeywordScreen
-          // items={items}
-          // favoriteItemIds={favoriteItemIds}
-          // addFavoriteItemId={addFavoriteItemId}
-          // removeFavoriteItemId={removeFavoriteItemId}
-          />
+          <SearchKeywordScreen />
         </Route>
-        {/* <Route path='/search_category'>
-          <SearchCategoryScreen
-            items={items}
-            categories={categories}
-            favoriteItemIds={favoriteItemIds}
-            addFavoriteItemId={addFavoriteItemId}
-            removeFavoriteItemId={removeFavoriteItemId}
-          />
+        <Route path='/search_category'>
+          <SearchCategoryScreen />
         </Route>
         <Route path='/search_favorite'>
-          <SearchFavoriteScreen
-            items={items}
-            favoriteItemIds={favoriteItemIds}
-            removeFavoriteItemId={removeFavoriteItemId}
-          />
-        </Route> */}
+          <SearchFavoriteScreen />
+        </Route>
         <Route>
           <div>Not Found</div>
         </Route>
